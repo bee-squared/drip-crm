@@ -1,43 +1,62 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="card mb-3">
-  <h5 class="card-header">
-    {{ customer_record.first_name }} {{ customer_record.last_name }}
-  </h5>
-  <div class="card-body">
-    <div class="py-1">
-      <strong>ID: </strong>
-      <p class="card-text d-inline lh-1">{{ customer_record.id }}</p>
-    </div>
-    <div class="py-1">
-      <strong>Email: </strong>
-      <p class="card-text d-inline">{{ customer_record.email }}</p>
-    </div>
-    <div class="py-1">
-      <strong>Phone: </strong>
-      <p class="card-text d-inline">{{ customer_record.phone }}</p>
-    </div>
-    <div class="py-1">
-      <strong>Address: </strong>
-      <p class="card-text d-inline">{{ customer_record.address }}</p>
-    </div>
-    <div class="py-1">
-      <strong>City: </strong>
-      <p class="card-text d-inline">{{ customer_record.city }}</p>
-    </div>
-    <div class="py-1">
-      <strong>State: </strong>
-      <p class="card-text d-inline">{{ customer_record.state }}</p>
-    </div>
-    <div class="py-1">
-      <strong>Zip Code: </strong>
-      <p class="card-text d-inline">{{ customer_record.zipcode }}</p>
-    </div>
-    <div class="py-1">
-      <strong>Date Created: </strong>
-      <p class="card-text d-inline">{{ customer_record.created_at }}</p>
+  <div class="card mb-3">
+    <h5 class="card-header">
+      {{ customer_record.first_name }} {{ customer_record.last_name }}
+    </h5>
+    <div class="card-body">
+      <div class="py-1">
+        <strong>ID: </strong>
+        <p class="card-text d-inline lh-1">{{ customer_record.id }}</p>
+      </div>
+      <div class="py-1">
+        <strong>Email: </strong>
+        <p class="card-text d-inline">{{ customer_record.email }}</p>
+      </div>
+      <div class="py-1">
+        <strong>Phone: </strong>
+        <p class="card-text d-inline">{{ customer_record.phone }}</p>
+      </div>
+      <div class="py-1">
+        <strong>Address: </strong>
+        <p class="card-text d-inline">{{ customer_record.address }}</p>
+      </div>
+      <div class="py-1">
+        <strong>City: </strong>
+        <p class="card-text d-inline">{{ customer_record.city }}</p>
+      </div>
+      <div class="py-1">
+        <strong>State: </strong>
+        <p class="card-text d-inline">{{ customer_record.state }}</p>
+      </div>
+      <div class="py-1">
+        <strong>Zip Code: </strong>
+        <p class="card-text d-inline">{{ customer_record.zipcode }}</p>
+      </div>
+      <div class="py-1">
+        <strong>Date Created: </strong>
+        <p class="card-text d-inline">{{ customer_record.created_at }}</p>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="d-flex gap-2">
+    <div>
+      <a
+        href="{% url 'home' %}"
+        class="btn btn-secondary"
+      >Back</a
+        >
+      </div>
+      <div>
+        <a
+          href="{% url 'delete_record' customer_record.id %}"
+          class="btn btn-danger"
+        >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
