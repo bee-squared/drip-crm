@@ -18,7 +18,7 @@
     <tbody>
       <tr>
         {% for record in records %}
-        <td>{{ record.id }}</td>
+        <td><a href="{% url 'record' record.id  %}">{{ record.id }}</a></td>
         <td>{{ record.first_name }} {{ record.last_name }}</td>
         <td>{{ record.email }}</td>
         <td>{{ record.phone }}</td>
@@ -32,39 +32,41 @@
     </tbody>
   </table>
   {% endif %} {% else %}
-  <h1 class="mb-4">Login</h1>
-  <form
-    method="post"
-    action="{% url 'home' %}"
-  >
-    {% csrf_token %}
-    <div class="mb-3">
-      <input
-        type="text"
-        class="form-control"
-        aria-describedby="userName"
-        name="username"
-        placeholder="Username"
-        required
-      />
-    </div>
-    <div class="mb-4">
-      <input
-        type="password"
-        class="form-control"
-        aria-describedby="password"
-        name="password"
-        placeholder="Password"
-        required
-      />
-    </div>
-    <button
-      type="submit"
-      class="btn btn-secondary"
+  <div class="col-md-6 offset-md-3">
+    <h1 class="mb-4">Login</h1>
+    <form
+      method="post"
+      action="{% url 'home' %}"
     >
-      Login
-    </button>
-  </form>
+      {% csrf_token %}
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="userName"
+          name="username"
+          placeholder="Username"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <input
+          type="password"
+          class="form-control"
+          aria-describedby="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-secondary"
+      >
+        Login
+      </button>
+    </form>
+  </div>
   {% endif %}
 </div>
 {% endblock %}
