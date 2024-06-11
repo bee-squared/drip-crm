@@ -1,3 +1,14 @@
 {% block content %}
-<h1>Customer Record</h1>
+    <h1>Customer Record</h1>
+
+    <p>{{ customer_record.id }}</p>
+    <p>{{ customer_record.first_name }} {{ customer_record.last_name }}</p>
+    <p>{{ customer_record.email }}</p>
+    <p>{{ customer_record.phone }}</p>
+    <p>{{ customer_record.address }}</p>
+    <p>{{ customer_record.city }}</p>
+    <p>{{ customer_record.state }}</p>
+    <p>{{ customer_record.zipcode }}</p>
+    <p>{{ customer_record.created_at }}</p>
+
 {% endblock %}
