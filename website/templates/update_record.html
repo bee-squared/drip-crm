@@ -1,12 +1,17 @@
-{% extends 'base.html' %} {% block content %}
-  <div class="col-md-6 offset-md-3">
-    <form
-      method="post"
-      action="{% url 'add_record' %}"
-    >
-      {% csrf_token %} {{form.as_p }}
+{% extends 'base.html' %}
+{% block content %}
 
-    <!-- buttons -->
+  <div class="col-md-6 offset-md-3">
+    <h1>Update Record</h1>
+    <br/>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <br/>
+      <!-- buttons -->
       <div class="d-flex gap-2">
         <div>
           <a
@@ -19,10 +24,13 @@
             type="submit"
             class="btn btn-secondary"
           >
-            Add Record
+            Update Record
           </button>
         </div>
-      </form>
-    </div>
+
+    </form>
+
+
+  </div>
 
 {% endblock %}

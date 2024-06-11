@@ -8,5 +8,6 @@ urlpatterns = [
     path('register/', views.register_user, name='register'),
     path('record/<int:pk>', views.customer_record, name='record'), #pk = primary key
     path('delete_record/<int:pk>', views.delete_record, name='delete_record'), #pk = primary key
-    path('add_record/', views.add_record, name='add_record')
+    path('add_record/', views.add_record, name='add_record'),
+    path('update_record/<int:pk>', views.update_record, name='update_record'), #pk = primary key
 ]
