@@ -2,6 +2,8 @@
 
 Drip CRM is a customer relationship management tool. Once a user is authenticated and logged in, they can create, read, update, and delete prospect and customer data.
 
+![Intro Image](./README_Images/drip-crm.gif "drip-crm.gif")
+
 ## Getting Started
 
 #### Setup
